@@ -1,7 +1,7 @@
 #active-game{
     text-align: center;
     margin: 2rem 0 5rem 0;
-    /* display: none; */
+    display: none;
 }
 
 #game-over{
@@ -49,12 +49,19 @@
 }
 
 #game-board li:hover{
-    background-color: rgb(112, 13, 2024);
+    background-color: rgb(112, 13, 204);
     color: aliceblue;
 }
 
 #game-board li.disabled{
-    background-color: rgb(112, 13, 2024);
+    background-color: rgb(112, 13, 204);
     color: aliceblue;
-    cursor:not-allowed;
+    cursor:default;
+}
+
+#alert-field-message{
+    color: rgb(136, 2, 2);
+    width: 18rem;
+    margin: 0 auto;
+    font-weight: bold;
 }

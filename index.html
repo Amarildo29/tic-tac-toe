@@ -19,7 +19,6 @@
     <div id="backdrop"></div>
     <header id="main-header">
         <h1>Play Tic, Tac, Toe</h1>
-        <p>Built with HTML, CSS, JavaScript and lots of love!</p>
     </header>
 
     <main>
@@ -43,21 +42,21 @@
                 <li>
                     <article id="player-1-data">
                         <h2>Player 1</h2>
-                        <h3>Player Name</h3>
-                        <p class="player-symbol">X</p>
+                        <h3>Name</h3>
+                        <p class="player-symbol">✖️</p>
                         <button class="btn btn-alt" id="edit-player-1-btn" data-playerid="1">Edit</button>
                     </article>
                 </li>
                 <li>
                     <article id="player-2-data">
                         <h2>Player 2</h2>
-                        <h3>Player Name</h3>
-                        <p class="player-symbol">O</p>
+                        <h3>Name</h3>
+                        <p class="player-symbol">⭕</p>
                         <button class="btn btn-alt" id="edit-player-2-btn" data-playerid="2">Edit</button>
                     </article>
                 </li>
             </ol>
-            <button class="btn">Start New Game</button>
+            <button class="btn" id="start-game-btn">Start New Game</button>
         </section>
 
         <section id="active-game">
@@ -67,17 +66,21 @@
             </article>
 
             <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
+            
             <ol id="game-board">
-                <li class="disabled">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
+                <li data-col="1" data-row="1"></li>
+                <li data-col="2" data-row="1"></li>
+                <li data-col="3" data-row="1"></li>
+
+                <li data-col="1" data-row="2"></li>
+                <li data-col="2" data-row="2"></li>
+                <li data-col="3" data-row="2"></li>
+
+                <li data-col="1" data-row="3"></li>
+                <li data-col="2" data-row="3"></li>
+                <li data-col="3" data-row="3"></li>
             </ol>
+            <p id="alert-field-message"></p>
         </section>
     </main>
 </body>

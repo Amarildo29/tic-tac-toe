@@ -1,18 +1,30 @@
+const gameData = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]
+];
+
 let editedPlayer = 0;
+let activePLayer = 0;
+let currentRound = 1;
+let gameIsOver = false;
 
 const players = [
   {
     name: "",
-    symbol: "X",
+    symbol: "✖️",
     },
   { name: "",
-    symbol: "O" 
+    symbol: "⭕" 
     },
 ];
 
 const playerConfigOverlayElement = document.getElementById("config-overlay");
 const backdropElement = document.getElementById("backdrop");
 const formElement = document.querySelector("form");
+const gameAreaElement = document.getElementById("active-game");
+const activePlayerNameElement = document.getElementById("active-player-name");
+const gameOverElement = document.getElementById("game-over");
 
 const editPlayer1BtnElement = document.getElementById("edit-player-1-btn");
 const editPlayer2BtnElement = document.getElementById("edit-player-2-btn");
@@ -20,9 +32,24 @@ const editPlayer2BtnElement = document.getElementById("edit-player-2-btn");
 const cancelConfigBtnElement = document.getElementById("cancel-config-btn");
 const configErrorElement = document.getElementById("config-erros");
 
+const startNewGameButtonElement = document.getElementById("start-game-btn");
+
+const gameFieldElements = document.querySelectorAll("#game-board li");
+const gameBoardElement = document.getElementById("game-board");
+const alertFieldMessageElement = document.getElementById("alert-field-message");
+
+
 editPlayer1BtnElement.addEventListener("click", openPlayerConfig);
 editPlayer2BtnElement.addEventListener("click", openPlayerConfig);
 cancelConfigBtnElement.addEventListener("click", closePlayerConfig);
-backdropElement.addEventListener("click", closePlayerConfig);
 
+backdropElement.addEventListener("click", closePlayerConfig);
 formElement.addEventListener("submit", savePlayerConfig);
+
+startNewGameButtonElement.addEventListener("click", startNewGame);
+
+for (const gameFieldElement of gameFieldElements){
+  gameFieldElement.addEventListener("click", selectGameField);
+}
+
+
