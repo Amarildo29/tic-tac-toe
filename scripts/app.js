@@ -12,10 +12,10 @@ let gameIsOver = false;
 const players = [
   {
     name: "",
-    symbol: "✖️",
+    symbol: "X",
     },
   { name: "",
-    symbol: "⭕" 
+    symbol: "O" 
     },
 ];
 
